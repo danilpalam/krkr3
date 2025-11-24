@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Скачать фотографии - Адаптивный сайт</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем библиотеку для создания ZIP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    
+    <header class="header" role="banner">
+        <nav class="nav" aria-label="Основная навигация">
+            <ul>
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="about.html" class="nav-link">О нас</a></li>
+                <li><a href="download.html" class="nav-link" aria-current="page">Скачать</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="main">
+        <section class="download-section">
+            <div class="container">
+                <h1 class="section-title">Скачать фотографии</h1>
+                
+                <div class="download-card">
+                    <div class="download-icon">📦</div>
+                    <h2 class="download-title">ZIP-архив с фотографиями</h2>
+                    <p class="download-description">Скачайте ZIP-файл, содержащий 5 реальных фотографий для проекта</p>
+                    
+                    <div class="file-info">
+                        <p><strong>Формат:</strong> .zip</p>
+                        <p><strong>Содержание:</strong> 5 фотографий в формате JPEG</p>
+                        <p><strong>Примерный размер:</strong> 500KB</p>
+                    </div>
+                    
+                    <button class="button button-primary" onclick="downloadPhotosZip()" aria-label="Скачать ZIP архив с фотографиями">
+                        Скачать ZIP с фотографиями
+                    </button>
+                </div>
+
+                <!-- Предпросмотр фотографий -->
+                <div class="photos-preview">
+                    <h2 class="preview-title">Фотографии в архиве:</h2>
+                    <div class="real-photos-grid">
+                        <div class="real-photo-item">
+                            <img src="images/obj1.png" alt="Сайт Мирэа" class="real-photo">
+                            <p class="photo-name">obj1.png</p>
+                        </div>
+                        <div class="real-photo-item">
+                            <img src="images/obj2.png" alt="Сайт Телеграм" class="real-photo">
+                            <p class="photo-name">obj2.png</p>
+                        </div>
+                        <div class="real-photo-item">
+                            <img src="images/obj3.png" alt="Сайт Гитхаб" class="real-photo">
+                            <p class="photo-name">obj3.png</p>
+                        </div>
+                        <div class="real-photo-item">
+                            <img src="images/obj4.png" alt="Сайт Дипсик" class="real-photo">
+                            <p class="photo-name">obj4.png</p>
+                        </div>
+                        <div class="real-photo-item">
+                            <img src="images/obj5.png" alt="Сайт Дром" class="real-photo">
+                            <p class="photo-name">obj5.png</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Адаптивный сайт. Все права защищены.</p>
+            <p>Современные технологии для цифрового будущего</p>
+        </div>
+    </footer>
+
+    <script>
+        async function downloadPhotosZip() {
+            try {
+                const zip = new JSZip();
+                
+                // Массив с путями к фотографиям
+                const photos = [{ name: 'hero-photo.jpg', path: 'images/hero-photo.jpg' },
+                    { name: 'obj1.png', path: 'images/obj1.png' },
+                    { name: 'obj2.png', path: 'images/obj2.png' },
+                    { name: 'obj3.png', path: 'images/obj3.png' },
+                    { name: 'obj4.png', path: 'images/obj4.png' },
+                    { name: 'obj5.png', path: 'images/obj5.png' }
+                ];
+
+                // Загружаем каждую фотографию и добавляем в ZIP
+                for (const photo of photos) {
+                    try {
+                        const response = await fetch(photo.path);
+                        if (response.ok) {
+                            const blob = await response.blob();
+                            zip.file(photo.name, blob);
+                        } else {
+                            console.warn(`Фото ${photo.name} не найдено: ${photo.path}`);
+                        }
+                    } catch (error) {
+                        console.warn(`Ошибка загрузки ${photo.name}:`, error);
+                    }
+                }
+
+                // Генерируем ZIP файл
+                const content = await zip.generateAsync({type: 'blob'});
+                
+                // Скачиваем
+                const url = URL.createObjectURL(content);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'фотографии-проекта.zip';
+                link.click();
+                URL.revokeObjectURL(url);
+                
+                showSuccessMessage('ZIP-архив скачан!');
+                
+            } catch (error) {
+                console.error('Ошибка создания ZIP:', error);
+                showErrorMessage('Ошибка при создании архива');
+            }
+        }
+
+        function showSuccessMessage(text) {
+            const notification = document.createElement('div');
+            notification.className = 'success';
+            notification.textContent = text;
+            notification.style.display = 'block';
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.zIndex = '1001';
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 3000);
+        }
+
+        function showErrorMessage(text) {
+            const notification = document.createElement('div');
+            notification.className = 'error';
+            notification.textContent = text;
+            notification.style.display = 'block';
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.zIndex = '1001';
+            notification.style.background = '#dc3545';
+            notification.style.color = 'white';
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

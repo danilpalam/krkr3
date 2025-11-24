@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Адаптивный сайт - Современная веб-разработка | Паламарчук Даниил</title>
+    <meta name="description" content="Профессиональная адаптивная верстка, доступные и быстрые веб-сайты. Создание современных интерфейсов с учетом лучших практик.">
+    <meta name="keywords" content="адаптивная верстка, фронтенд разработка, доступность, производительность, SEO">
+    <meta name="author" content="Паламарчук Даниил">
+    <meta property="og:title" content="Адаптивный сайт - Современная веб-разработка">
+    <meta property="og:description" content="Профессиональная адаптивная верстка и доступные веб-сайты">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ваш-сайт.ru">
+    <meta property="og:image" content="https://ваш-сайт.ru/images/og-image.jpg">
+    <link rel="canonical" href="https://ваш-сайт.ru">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    
+    <header class="header" role="banner">
+        <nav class="nav" aria-label="Основная навигация">
+            <ul>
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="about.html" class="nav-link" aria-current="page">О нас</a></li>
+                <li><a href="download.html" class="nav-link">Скачать</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="main">
+        <!-- Hero секция -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">О нашей компании</h1>
+                <p class="hero__subtitle">Мы создаём современные цифровые решения с 2020 года</p>
+            </div>
+        </section>
+
+        <!-- О компании -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2 class="section-title">Цель</h2>
+                        <div class="prose">
+                            <p>Я стремлюсь создавать инновационные веб-решения, которые делают цифровой опыт доступным для всех пользователей, независимо от их возможностей и устройств.</p>
+                            
+                            <h3>Мои ценности</h3>
+                            <ul>
+                                <li><strong>Доступность:</strong> Создаю продукты, которыми могут пользоваться все</li>
+                                <li><strong>Инновации:</strong> Внедряю современные технологии и подходы</li>
+                                <li><strong>Качество:</strong> Гарантирую высокое качество кода и пользовательского опыта</li>
+                                <li><strong>Поддержка:</strong> Обеспечиваю постоянную поддержку наших клиентов</li>
+                            </ul>
+
+                            <h3>Моя история</h3>
+                            <p>Основанная в 2020 году, наша компания начала с небольших проектов и выросла в команду профессионалов, специализирующихся на фронтенд и бэкенд разработке. Мы гордимся каждым проектом и стремимся к постоянному совершенствованию.</p>
+                        </div>
+                    </div>
+
+                    <aside class="about-stats">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="50">0</div>
+                                <div class="stat-label">Завершённых проектов</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="3">0</div>
+                                <div class="stat-label">Года опыта</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="15">0</div>
+                                <div class="stat-label">Профессионалов в команде</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="98">0</div>
+                                <div class="stat-label">% довольных клиентов</div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Команда -->
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Наша команда</h2>
+                <div class="team-grid">
+                    <article class="team-member">
+                        <div class="member-photo">
+                            <img src="images/team1.jpg" alt="Алексей Петров - Frontend разработчик" loading="lazy" width="150" height="150">
+                        </div>
+                        <h3 class="member-name">Охотников Святослав</h3>
+                        <p class="member-role">Frontend разработчик</p>
+                        <p class="member-bio">Специализируется на React, Vue.js и доступности веб-приложений. Опыт работы - 5 лет.</p>
+                    </article>
+
+                    <article class="team-member">
+                        <div class="member-photo">
+                            <img src="images/team2.jpg" alt="Мария Сидорова - Backend разработчик" loading="lazy" width="150" height="150">
+                        </div>
+                        <h3 class="member-name">Данила Бочаров</h3>
+                        <p class="member-role">Backend разработчик</p>
+                        <p class="member-bio">Эксперт в Node.js, Python и проектировании API. Опыт работы - 4 года.</p>
+                    </article>
+
+                    <article class="team-member">
+                        <div class="member-photo">
+                            <img src="images/team3.jpg" alt="Дмитрий Иванов - UX/UI дизайнер" loading="lazy" width="150" height="150">
+                        </div>
+                        <h3 class="member-name">Олег Паламарчук</h3>
+                        <p class="member-role">UX/UI дизайнер</p>
+                        <p class="member-bio">Создаёт интуитивные интерфейсы с акцентом на пользовательский опыт.</p>
+                    </article>
+
+                    <article class="team-member">
+                        <div class="member-photo">
+                            <img src="images/team4.jpg" alt="Елена Козлова - Project менеджер" loading="lazy" width="150" height="150">
+                        </div>
+                        <h3 class="member-name">Даниил Паламарчук</h3>
+                        <p class="member-role">Project менеджер</p>
+                        <p class="member-bio">Координирует проекты и обеспечивает своевременную delivery.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Технологии -->
+        <section class="tech-section">
+            <div class="container">
+                <h2 class="section-title">Технологии которые мы используем</h2>
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <h3>Frontend</h3>
+                        <ul class="tech-list">
+                            <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li>React, Vue.js, Angular</li>
+                            <li>TypeScript, Webpack, Vite</li>
+                            <li>SASS, Tailwind CSS</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-category">
+                        <h3>Backend</h3>
+                        <ul class="tech-list">
+                            <li>Node.js, Python, PHP</li>
+                            <li>Express, Django, Laravel</li>
+                            <li>MySQL, PostgreSQL, MongoDB</li>
+                            <li>Redis, Docker, Kubernetes</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-category">
+                        <h3>Инструменты</h3>
+                        <ul class="tech-list">
+                            <li>Git, GitHub, GitLab</li>
+                            <li>Figma, Adobe XD</li>
+                            <li>Jest, Cypress, Lighthouse</li>
+                            <li>Web Accessibility (A11y)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA секция -->
+        <section class="cta-section full-bleed">
+            <div class="container">
+                <h2 class="cta-title">Готовы начать проект?</h2>
+                <p class="cta-text">Свяжитесь с нами для бесплатной консультации</p>
+                <div class="cta-buttons">
+                    <a href="contacts.html" class="button button-primary">Связаться с нами</a>
+                    <button class="button button-secondary" onclick="openModal()">Узнать больше</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно -->
+    <div class="overlay" onclick="closeModal()"></div>
+    <div class="modal" 
+         id="modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modal-title"
+         aria-describedby="modal-desc"
+         tabindex="-1">
+        <h2 id="modal-title">Дополнительная информация о компании</h2>
+        <p id="modal-desc">Мы предлагаем полный цикл разработки - от проектирования до поддержки. Наши специалисты постоянно обучаются и следят за последними тенденциями в веб-разработке.</p>
+        
+        <h3>Наши услуги</h3>
+        <ul>
+            <li>Разработка веб-приложений</li>
+            <li>Создание мобильных приложений</li>
+            <li>UX/UI дизайн</li>
+            <li>Технический аудит и консультации</li>
+        </ul>
+
+        <button class="close-btn" onclick="closeModal()" aria-label="Закрыть диалоговое окно">
+            <span class="visually-hidden">Закрыть</span>×
+        </button>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Адаптивный сайт. Все права защищены.</p>
+            <p>О нас: создаём цифровые решения будущего</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Анимация счетчиков статистики
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (element.dataset.count === '98' ? '%' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + (element.dataset.count === '98' ? '%' : '+');
+                }
+            }, 16);
+        }
+
+        // Запуск анимации при скролле
+        function startCountersWhenVisible() {
+            const counters = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.dataset.count);
+                        animateCounter(entry.target, target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        document.addEventListener('DOMContentLoaded', startCountersWhenVisible);
+    </script>
+</body>
+</html>

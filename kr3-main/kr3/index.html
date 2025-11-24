@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    
+    <!-- Критически важные SEO-теги -->
+    <title>Адаптивный сайт - Современная веб-разработка | Паламарчук Даниил</title>
+    <meta name="description" content="Профессиональная адаптивная верстка, доступные и быстрые веб-сайты. Создание современных интерфейсов с учетом лучших практик.">
+    <meta name="keywords" content="адаптивная верстка, фронтенд разработка, доступность, производительность, SEO">
+    <meta name="author" content="Паламарчук Даниил">
+    
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="Адаптивный сайт - Современная веб-разработка">
+    <meta property="og:description" content="Профессиональная адаптивная верстка и доступные веб-сайты">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ваш-сайт.ru">
+    <meta property="og:image" content="https://ваш-сайт.ru/images/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ваш-сайт.ru">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    
+    <header class="header" role="banner">
+        <nav class="nav" aria-label="Основная навигация">
+            <ul>
+                <li><a href="#home" class="nav-link" aria-current="page">Главная</a></li>
+                <li><a href="about.html" class="nav-link">О нас</a></li>
+                <li><a href="download.html" class="nav-link">Скачать</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="main">
+        <!-- Герой-секция -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Добро пожаловать на мой сайт</h1>
+                <p class="hero__subtitle">Паламарчук Даниил ЭФБО-18-24</p>
+                
+                <figure class="hero__image">
+                    <picture>
+                        <img class="hero__photo"
+                             src="images/hero-200.jpg"
+                             width="200" 
+                             height="200"
+                             alt="Портрет студента - [Ваше Имя], Frontend разработчик"
+                             loading="eager"
+                             decoding="async">
+                    </picture>
+                    <figcaption class="visually-hidden">Портрет студента</figcaption>
+                </figure>
+                
+                <button class="button" onclick="openModal()" aria-label="Узнать больше о наших услугах">
+                    Узнать больше
+                </button>
+            </div>
+        </section>
+
+        <!-- Секция проектов -->
+        <section class="projects-area">
+            <div class="container">
+                <h2 class="section-title">Мои проекты</h2>
+                <div class="projects-preview__grid">
+                    <article class="project-card">
+                        <div class="project-icon">🚀</div>
+                        <h3 class="project-card__title">Адаптивный дизайн</h3>
+                        <p class="project-card__description">Создаю сайты, которые идеально выглядят на всех устройствах - от смартфонов до десктопов.</p>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-icon">♿</div>
+                        <h3 class="project-card__title">Доступность (A11y)</h3>
+                        <p class="project-card__description">Обеспечиваю полную доступность для пользователей с ограниченными возможностями.</p>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-icon">⚡</div>
+                        <h3 class="project-card__title">Высокая производительность</h3>
+                        <p class="project-card__description">Оптимизирую сайты для быстрой загрузки и плавной работы.</p>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-icon">🎨</div>
+                        <h3 class="project-card__title">Современные технологии</h3>
+                        <p class="project-card__description">Использую последние веб-стандарты и лучшие практики разработки.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают меня</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Современный код</h3>
+                        <p>Использую HTML5, CSS3, Grid, Flexbox и современные подходы к вёрстке</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Полная доступность</h3>
+                        <p>Все мои проекты соответствуют стандартам WCAG 2.1 уровня AA</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Кроссбраузерность</h3>
+                        <p>Сайты работают во всех современных браузерах и на всех устройствах</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Оптимизация</h3>
+                        <p>Быстрая загрузка, оптимизированные изображения, минимальный вес</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Галерея -->
+        <section class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">Методы</h2>
+                <div class="gallery">
+                    <div class="gallery__item">
+                        <div class="gallery-placeholder">📱</div>
+                        <p class="gallery-caption">Мобильная вёрстка</p>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="gallery-placeholder">💻</div>
+                        <p class="gallery-caption">Десктоп версии</p>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="gallery-placeholder">🎯</div>
+                        <p class="gallery-caption">Интерактивные элементы</p>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="gallery-placeholder">✨</div>
+                        <p class="gallery-caption">Анимации и эффекты</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно -->
+    <div class="overlay" onclick="closeModal()"></div>
+    <div class="modal" 
+         id="modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modal-title"
+         aria-describedby="modal-desc"
+         tabindex="-1">
+        <h2 id="modal-title">Дополнительная информация</h2>
+        <p id="modal-desc">Мы специализируемся на создании современных, доступных и быстрых веб-сайтов. Используем лучшие практики разработки и следим за последними трендами.</p>
+        
+        <h3>Мои услуги</h3>
+        <ul>
+            <li>Адаптивная вёрстка</li>
+            <li>Frontend разработка</li>
+            <li>Оптимизация производительности</li>
+            <li>Доступность (A11y)</li>
+        </ul>
+
+        <button class="close-btn" onclick="closeModal()" aria-label="Закрыть диалоговое окно">
+            <span class="visually-hidden">Закрыть</span>×
+        </button>
+    </div>
+
+    <!-- Динамическое уведомление -->
+    <div class="success" 
+         id="success"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true">
+        Действие выполнено успешно!
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Адаптивный сайт. Все права защищены.</p>
+            <p>Современные технологии для цифрового будущего</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Адаптивный сайт - Современная веб-разработка | Паламарчук Даниил</title>
+    <meta name="description" content="Профессиональная адаптивная верстка, доступные и быстрые веб-сайты. Создание современных интерфейсов с учетом лучших практик.">
+    <meta name="keywords" content="адаптивная верстка, фронтенд разработка, доступность, производительность, SEO">
+    <meta name="author" content="Паламарчук Даниил">
+    <meta property="og:title" content="Адаптивный сайт - Современная веб-разработка">
+    <meta property="og:description" content="Профессиональная адаптивная верстка и доступные веб-сайты">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ваш-сайт.ru">
+    <meta property="og:image" content="https://ваш-сайт.ru/images/og-image.jpg">
+    <link rel="canonical" href="https://ваш-сайт.ru">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    
+    <header class="header" role="banner">
+        <nav class="nav" aria-label="Основная навигация">
+            <ul>
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="about.html" class="nav-link">О нас</a></li>
+                <li><a href="download.html" class="nav-link">Скачать</a></li>
+                <li><a href="contacts.html" class="nav-link" aria-current="page">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="main">
+        <div class="container">
+            <h1 class="section-title">Свяжитесь со мной</h1>
+            
+            <form class="contact-form" aria-labelledby="form-title">
+                <fieldset>
+                    <legend id="form-title" class="visually-hidden">Форма обратной связи</legend>
+                    
+                    <!-- Группа поля имени -->
+                    <div class="form-group">
+                        <label for="name">
+                            Имя <span class="required" aria-hidden="true">*</span>
+                        </label>
+                        <input type="text"
+                               id="name"
+                               name="name"
+                               required
+                               aria-required="true"
+                               aria-describedby="name-error"
+                               aria-invalid="false">
+                        <div id="name-error" class="error" role="alert" hidden>
+                            Поле обязательно для заполнения
+                        </div>
+                    </div>
+
+                    <!-- Группа поля email -->
+                    <div class="form-group">
+                        <label for="email">Email адрес</label>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               aria-describedby="email-help">
+                        <div id="email-help" class="help-text">
+                            Мы отправим ответ на этот адрес
+                        </div>
+                    </div>
+
+                    <!-- Группа выпадающего списка -->
+                    <div class="form-group">
+                        <label for="topic">Тема обращения</label>
+                        <select id="topic" name="topic" required aria-required="true">
+                            <option value="">Выберите тему</option>
+                            <option value="question">Общий вопрос</option>
+                            <option value="complaint">Жалоба на обслуживание</option>
+                            <option value="suggestion">Предложение по улучшению</option>
+                        </select>
+                    </div>
+
+                    <!-- Группа текстовой области -->
+                    <div class="form-group">
+                        <label for="message">Ваше сообщение</label>
+                        <textarea id="message"
+                                  name="message"
+                                  aria-describedby="message-help"
+                                  rows="5"
+                                  required
+                                  aria-required="true"></textarea>
+                        <div id="message-help" class="help-text">
+                            Опишите вашу проблему или вопрос подробно
+                        </div>
+                    </div>
+
+                    <button type="submit" class="button" aria-label="Отправить форму обратной связи">
+                        Отправить сообщение
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Адаптивный сайт. Все права защищены.</p>
+            <p>Контакты: example@email.com | +7 (123) 456-78-90</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
